@@ -126,7 +126,7 @@ final class ApiRequest
         if (!empty($queryParams)) {
             $query .= '?' . http_build_query($queryParams);
         }
-        if ($apiMethod !== 'POST') {
+        if ($method !== 'POST') {
             $data = http_build_query($data);
         }
         $resource = curl_init(self::API_URL . '/' . $apiMethod . '/' . $query);

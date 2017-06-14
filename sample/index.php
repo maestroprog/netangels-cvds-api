@@ -23,6 +23,7 @@ try {
     if ($prev = $e->getPrevious()) {
         echo '<p>' . nl2br($prev->getMessage()) . '</p>';
     }
+    exit;
 }
 if (isset($_GET['vds']) && isset($_GET['action'])) {
     try {
