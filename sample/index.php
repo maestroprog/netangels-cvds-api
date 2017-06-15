@@ -34,8 +34,8 @@ if (isset($_GET['vds']) && isset($_GET['action'])) {
             case 'stop':
                 $netAngelsApi->getVmApi()->getVds($_GET['vds'])->stop();
                 break;
-            case'delete':
-                $netAngelsApi->getVmApi()->getVds($_GET['vds'])->delete(true);
+            case 'reboot':
+                $netAngelsApi->getVmApi()->getVds($_GET['vds'])->softReboot();
                 break;
         }
     } catch (ApiException $e) {
@@ -53,7 +53,7 @@ if (isset($_GET['vds']) && isset($_GET['action'])) {
 <table>
     <tr>
         <th>ID</th>
-        <th>Нащвание</th>
+        <th>Название</th>
         <th>Состояние</th>
         <th>Действия</th>
     </tr>
@@ -73,7 +73,7 @@ if (isset($_GET['vds']) && isset($_GET['action'])) {
                     <?php default: ?>
                         - нет -
                     <?php endswitch; ?>
-                <a href="?vds=<?= $vds->getId() ?>&action=delete">Удалить</a>
+                <a href="?vds=<?= $vds->getId() ?>&action=reboot">Перезагрузка</a>
             </td>
         </tr>
     <?php endforeach; ?>
