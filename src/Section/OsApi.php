@@ -28,9 +28,7 @@ class OsApi extends AbstractApi
         } while (null != $result->getData('next'));
 
         foreach ($list as &$img) {
-            // todo it is fix for NetAngels api bug
-            $data = json_decode($a = str_replace(['u\'', '\''], ['"', '"'], $img['required_data']), true);
-            $img = new OsImage($img['id'], $img['description'], $img['arch'], $data);
+            $img = new OsImage($img['id'], $img['description'], $img['arch'], $img['required_data']);
             unset($img);
         }
         return $this->cache = $list;
