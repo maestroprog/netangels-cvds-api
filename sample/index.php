@@ -5,7 +5,9 @@ use NetAngels\ApiException;
 use NetAngels\ApiKey;
 use NetAngels\ApiToken;
 
-require __DIR__ . '/../src/bootstrap.php';
+ini_set('display_errors', true);
+error_reporting(E_ALL);
+require_once __DIR__ . '/../src/bootstrap.php';
 require 'key.php';
 
 try {

@@ -1,0 +1,17 @@
+{
+    "name": "maestroprog/netangels-cvds-api",
+    "description": "A php library provides remote control for NetAngels cloud VDS hosting.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruslan Yarullin",
+            "email": "maestroprog@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*"
+    }
+}
